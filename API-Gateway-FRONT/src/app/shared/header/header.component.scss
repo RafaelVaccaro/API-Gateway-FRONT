@@ -65,6 +65,7 @@
     height: 40px;
 
 
+
     mat-button-toggle {
       display: flex;
       align-items: center;
@@ -73,6 +74,7 @@
       border-color: var(--accent-color);
       color: var(--font-color);
       border-width: 1.5px;
+      width: 72px;
     }
 
     mat-button-toggle-label-content {
