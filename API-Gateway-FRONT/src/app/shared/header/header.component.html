@@ -1,0 +1,33 @@
+<header class="app-header">
+  <mat-toolbar>
+    <div class="header-wrapper">
+      <div class="logo-header">
+        <img [src]="logoPath" alt="Logo Rafa Compras">
+      </div>
+      <div class="page-selector">
+        <a href="/usuario">Usuários</a>
+        <span>|</span>
+        <a href="/produto">Produtos</a>
+        <span>|</span>
+        <a href="/pedido">Pedidos</a>
+      </div>
+      <div class="theme-toggle">
+        <mat-button-toggle-group
+          name="themeToggle"
+          aria-label="Theme Toggle"
+          (change)="onThemeChange($event.value)"
+        >
+          <mat-button-toggle value="light">
+            LIGHT
+            <mat-icon>light_mode</mat-icon>
+          </mat-button-toggle>
+          <mat-button-toggle value="dark">
+            DARK
+            <mat-icon>dark_mode</mat-icon>
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+
+      </div>
+    </div>
+  </mat-toolbar>
+</header>

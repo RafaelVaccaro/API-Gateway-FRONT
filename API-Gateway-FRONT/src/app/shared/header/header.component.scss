@@ -1,0 +1,109 @@
+@import "../../../styles/variables.scss";
+
+.app-header {
+
+  img {
+    height: 65px;
+  }
+
+  button {
+    margin: 0 16px;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-toolbar {
+    background-color: var(--primary-color);
+    padding: 0 64px;
+    border-bottom: 1.5px solid var(--accent-color);
+
+  }
+
+  .header-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    align-items: center;
+    gap: 16px;
+    height: 64px;
+    justify-content: space-between;
+
+  }
+
+  .logo-header {
+    display: flex;
+    align-items: center;
+  }
+
+  .page-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    gap: 10px;
+    font-family: $fonte-princpial;
+    font-weight: 600;
+
+    a {
+      text-decoration: none;
+      color: var(--font-color);
+    }
+
+    span {
+      color: var(--font-color);
+    }
+  }
+
+  mat-button-toggle-group {
+    font-size: 15px;
+    border-radius: 40px;
+    border-color: var(--accent-color);
+    border-width: 1.5px;
+    height: 40px;
+
+
+    mat-button-toggle {
+      display: flex;
+      align-items: center;
+      font-family: $fonte-princpial;
+      background-color: var(--secondary-color);
+      border-color: var(--accent-color);
+      color: var(--font-color);
+      border-width: 1.5px;
+    }
+
+    mat-button-toggle-label-content {
+      padding: 0;
+    }
+
+    mat-icon {
+      height: 26px;
+      width: 26px;
+    }
+  }
+}
+
+@media screen and (max-width: 1300px){
+  .app-header {
+    .mat-toolbar {
+
+    }
+  }
+}
+
+@media screen and (max-width: 850px){
+  .app-header {
+    .mat-toolbar {
+      padding: 0 64px;
+    }
+
+    .btn-header {
+      display: none;
+    }
+  }
+}
+
+
