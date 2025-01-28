@@ -17,6 +17,8 @@ import { PedidoComponent } from './pages/pedido/pedido.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatSortModule} from "@angular/material/sort";
+import { CardUsuarioComponent } from './shared/card-usuario/card-usuario.component';
+import { CardProdutoComponent } from './shared/card-produto/card-produto.component';
 
 
 
@@ -28,6 +30,8 @@ import {MatSortModule} from "@angular/material/sort";
     UsuarioComponent,
     ProdutoComponent,
     PedidoComponent,
+    CardUsuarioComponent,
+    CardProdutoComponent,
   ],
   imports: [
     BrowserModule,

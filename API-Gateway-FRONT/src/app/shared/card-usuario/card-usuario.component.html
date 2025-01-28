@@ -1,0 +1,12 @@
+<div class="card-usuario">
+  <div class="info">
+    <h3>ID: {{ usuario.id }}</h3>
+    <h3>Nome: {{ usuario.nome }}</h3>
+    <h3>Email: {{ usuario.email }}</h3>
+  </div>
+  <div class="botao-delete">
+    <button (click)="deletarUsuario()" class="delete-button">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</div>

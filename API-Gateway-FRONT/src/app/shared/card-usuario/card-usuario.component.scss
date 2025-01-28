@@ -1,0 +1,41 @@
+@import "../../../styles/variables.scss";
+
+.card-usuario {
+  display: flex;
+  justify-content: space-between;
+  border: 1.5px solid var(--accent-color);
+  border-radius: 20px;
+  padding: 16px;
+  background-color: var(--primary-color);
+  color: var(--font-color);
+  width: 380px;
+  height: 100px;
+
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h3 {
+      margin: 0;
+      font-family: $fonte-princpial;
+
+    }
+  }
+
+  .botao-delete {
+    display: flex;
+    align-items: start;
+    justify-content: end;
+
+    .delete-button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: var(--accent-color);
+
+    }
+  }
+
+
+}

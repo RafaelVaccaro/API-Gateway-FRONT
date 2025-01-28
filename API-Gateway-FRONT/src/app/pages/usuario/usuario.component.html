@@ -1,41 +1,18 @@
 <section class="usuario-section">
   <div class="form-div">
     <form class="usuario-form" (ngSubmit)="registrarUsuario()">
-      <input type="text" name="name" placeholder="Nome" [(ngModel)]="usuario.name" required>
+      <input type="text" name="name" placeholder="Nome" [(ngModel)]="usuario.nome" required>
       <input type="email" name="email" placeholder="Email" [(ngModel)]="usuario.email" required>
       <button type="submit">Registrar Usuário</button>
     </form>
   </div>
 
-  <div class="table-div">
-    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
-        <td mat-cell *matCellDef="let usuario"> {{ usuario.id }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="nome">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
-        <td mat-cell *matCellDef="let usuario"> {{ usuario.nome }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="email">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
-        <td mat-cell *matCellDef="let usuario"> {{ usuario.email }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef> Ações </th>
-        <td mat-cell *matCellDef="let usuario">
-          <button mat-button (click)="deletarUsuario(usuario.id)">Deletar</button>
-        </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  <div class="cards-usuarios">
+    <app-card-usuario
+      *ngFor="let usuario of usuarios"
+      [usuario]="usuario"
+      (usuarioDeletado)="deletarUsuario($event)">
+    </app-card-usuario>
   </div>
+
 </section>

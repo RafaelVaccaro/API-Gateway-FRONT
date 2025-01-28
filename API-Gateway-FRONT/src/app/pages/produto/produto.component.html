@@ -1,1 +1,25 @@
-<p>produto works!</p>
+<section class="produto-section">
+  <div class="form-div">
+    <form class="produto-form" (ngSubmit)="registrarProduto()">
+      <div class="inputs">
+        <div class="nome-descricao">
+          <input class="top" type="text" name="name" placeholder="Nome" [(ngModel)]="produto.name" required>
+          <input class="top" type="number" name="price" placeholder="Preço" [(ngModel)]="produto.price" required>
+          <input class="top" type="number" name="stock" placeholder="Quantidade" [(ngModel)]="produto.stock" required>
+        </div>
+        <div class="preco-quantidade">
+          <textarea class="bottom" name="description" placeholder="Descrição" required></textarea>
+        </div>
+      </div>
+      <button type="submit">Registrar Produto</button>
+    </form>
+  </div>
+
+  <div class="cards-produtos">
+    <app-card-produto
+      *ngFor="let produto of produtos"
+      [produto]="produto"
+      (produtoDeletado)="deletarProduto($event)">
+    </app-card-produto>
+  </div>
+</section>

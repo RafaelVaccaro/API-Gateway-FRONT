@@ -1,0 +1,11 @@
+.card-produto {
+  display: flex;
+  justify-content: space-between;
+  border: 1.5px solid var(--accent-color);
+  border-radius: 20px;
+  padding: 16px;
+  background-color: var(--primary-color);
+  color: var(--font-color);
+  width: 380px;
+  height: 150px;
+}

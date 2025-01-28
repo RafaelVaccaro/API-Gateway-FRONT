@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 60px;
 
   .form-div {
     margin: 20px;
@@ -29,7 +30,7 @@
         height: 20px;
         font-size: 17px;
         font-family: $fonte-princpial;
-        padding: 5px 7px;
+        padding: 7px 9px;
         outline: none;
       }
 
@@ -50,6 +51,15 @@
         cursor: pointer;
       }
     }
+  }
+
+  .cards-usuarios {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   }
 
 

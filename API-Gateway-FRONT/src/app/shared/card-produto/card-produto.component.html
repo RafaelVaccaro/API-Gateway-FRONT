@@ -1,0 +1,16 @@
+<div class="card-produto">
+  <div class="info">
+    <h3>ID: {{ produto.id }}</h3>
+    <h3>Nome: {{ produto.name }}</h3>
+    <h3>Preço: {{ produto.price }}</h3>
+    <h3>Qtd: {{ produto.stock }}</h3>
+  </div>
+  <div class="botao-delete">
+    <button (click)="deletarProduto()" class="delete-button">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button mat-button (click)="openDialog()">
+      <mat-icon>book</mat-icon>
+    </button>
+  </div>
+</div>
