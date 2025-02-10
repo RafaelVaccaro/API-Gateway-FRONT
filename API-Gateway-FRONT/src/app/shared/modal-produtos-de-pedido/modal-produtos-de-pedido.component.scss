@@ -1,0 +1,35 @@
+@import "../../../styles/variables.scss";
+
+.modal {
+  background-color: var(--secondary-color);
+  h2 {
+    color: var(--font-color);
+    font-family: $fonte-princpial;
+  }
+  .mat-table {
+    background-color: var(--primary-color);
+    border: 1.5px solid var(--accent-color);
+    th {
+      color: var(--font-color);
+      font-family: $fonte-princpial;
+    }
+    td {
+      color: var(--font-color);
+      font-family: $fonte-princpial;
+    }
+    tr {
+      color: var(--font-color);
+      font-family: $fonte-princpial;
+    }
+    p {
+      color: var(--font-color);
+      font-family: $fonte-princpial;
+    }
+  }
+
+  button {
+    color: var(--font-color);
+    border: 1.5px solid var(--accent-color);
+
+  }
+}

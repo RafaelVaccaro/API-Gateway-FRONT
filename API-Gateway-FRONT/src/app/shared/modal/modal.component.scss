@@ -1,0 +1,51 @@
+@import "../../../styles/variables.scss";
+
+.modal {
+  background-color: var(--primary-color);
+  box-shadow: none;
+  height: 300px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+
+  .top {
+    h2 {
+      color: var(--font-color);
+      font-family: $fonte-princpial;
+    }
+  }
+  .mid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .desc {
+      background-color: var(--secondary-color);
+      border: 1.5px solid var(--accent-color);
+      border-radius: 20px;
+      width: 400px;
+      height: 150px;
+      align-self: center;
+
+      p {
+        color: var(--font-color);
+        font-family: $fonte-princpial;
+        width: 352px;
+        height: 110px;
+      }
+    }
+  }
+  .bottom {
+    .botao-fechar {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-end;
+      margin-top: 20px;
+      button {
+        color: var(--font-color);
+        border: 1.5px solid var(--accent-color);
+      }
+    }
+  }
+}

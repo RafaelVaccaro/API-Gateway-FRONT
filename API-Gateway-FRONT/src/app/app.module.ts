@@ -16,12 +16,14 @@ import { ProdutoComponent } from './pages/produto/produto.component';
 import { PedidoComponent } from './pages/pedido/pedido.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import {MatSortModule} from "@angular/material/sort";
+import { MatSortModule } from "@angular/material/sort";
 import { CardUsuarioComponent } from './shared/card-usuario/card-usuario.component';
 import { CardProdutoComponent } from './shared/card-produto/card-produto.component';
-
-
-
+import { MatButtonModule } from '@angular/material/button';
+import { ModalComponent } from './shared/modal/modal.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import { CardPedidoComponent } from './shared/card-pedido/card-pedido.component';
+import { ModalProdutosDePedidoComponent } from './shared/modal-produtos-de-pedido/modal-produtos-de-pedido.component';
 
 @NgModule({
   declarations: [
@@ -32,20 +34,25 @@ import { CardProdutoComponent } from './shared/card-produto/card-produto.compone
     PedidoComponent,
     CardUsuarioComponent,
     CardProdutoComponent,
+    ModalComponent,
+    CardPedidoComponent,
+    ModalProdutosDePedidoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule, // Suporte para formulários com ngModel
-    HttpClientModule, // Importado para suporte a requisições HTTP
+    FormsModule,
+    HttpClientModule,
     MatToolbarModule,
     MatButtonToggleModule,
     MatSlideToggleModule,
     MatIconModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

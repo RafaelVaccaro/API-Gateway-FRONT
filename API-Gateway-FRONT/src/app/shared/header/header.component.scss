@@ -1,111 +1,144 @@
 @import "../../../styles/variables.scss";
 
 .app-header {
-
-  img {
-    height: 65px;
-  }
-
-  button {
-    margin: 0 16px;
-  }
-
   .spacer {
     flex: 1 1 auto;
   }
-
   .mat-toolbar {
     background-color: var(--primary-color);
     padding: 0 64px;
     border-bottom: 1.5px solid var(--accent-color);
-
-  }
-
-  .header-wrapper {
-    display: flex;
-    width: 100%;
-    max-width: 1920px;
-    margin: 0 auto;
-    align-items: center;
-    gap: 16px;
-    height: 64px;
-    justify-content: space-between;
-
-  }
-
-  .logo-header {
-    display: flex;
-    align-items: center;
-  }
-
-  .page-selector {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 10px;
-    gap: 10px;
-    font-family: $fonte-princpial;
-    font-weight: 600;
-
-    a {
-      text-decoration: none;
-      color: var(--font-color);
-    }
-
-    span {
-      color: var(--font-color);
-    }
-  }
-
-  mat-button-toggle-group {
-    font-size: 15px;
-    border-radius: 40px;
-    border-color: var(--accent-color);
-    border-width: 1.5px;
-    height: 40px;
-
-
-
-    mat-button-toggle {
+    .header-wrapper {
       display: flex;
+      width: 100%;
+      max-width: 1920px;
+      margin: 0 auto;
       align-items: center;
-      font-family: $fonte-princpial;
-      background-color: var(--secondary-color);
-      border-color: var(--accent-color);
-      color: var(--font-color);
-      border-width: 1.5px;
-      width: 72px;
-    }
-
-    mat-button-toggle-label-content {
-      padding: 0;
-    }
-
-    mat-icon {
-      height: 26px;
-      width: 26px;
+      gap: 16px;
+      height: 64px;
+      justify-content: space-between;
+      .logo-header {
+        display: flex;
+        align-items: center;
+        img {
+          height: 65px;
+        }
+      }
+      .page-selector {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+        gap: 10px;
+        font-family: $fonte-princpial;
+        font-weight: 600;
+        a {
+          text-decoration: none;
+          color: var(--font-color);
+        }
+        span {
+          color: var(--font-color);
+        }
+      }
+      .theme-toggle {
+        mat-button-toggle-group {
+          font-size: 15px;
+          border-radius: 40px;
+          border-color: var(--accent-color);
+          border-width: 1.5px;
+          height: 35px;
+          mat-button-toggle {
+            display: flex;
+            align-items: center;
+            font-family: $fonte-princpial;
+            background-color: var(--secondary-color);
+            border-color: var(--accent-color);
+            color: var(--font-color);
+            border-width: 1.5px;
+            width: 60px;
+          }
+          mat-button-toggle-label-content {
+            padding: 0;
+          }
+          mat-icon {
+            height: 26px;
+            width: 26px;
+          }
+        }
+      }
     }
   }
 }
 
-@media screen and (max-width: 1300px){
+@media screen and (max-width: 880px) {
   .app-header {
     .mat-toolbar {
+      height: 128px; // Aumenta a altura para caber as duas "camadas"
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column; // Empilha os elementos verticalmente
+      padding: 0 16px; // Um padding menor para telas pequenas
 
+    }
+
+    .header-wrapper {
+      display: flex;
+      flex-wrap: wrap; // Permite que os elementos quebrem de linha
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 128px;
+      margin: 0 100px;
+    }
+
+    // Parte superior: Logo + Seletor de Tema
+    .logo-header {
+      order: 1;
+      flex: 1; // Ocupa o espaço disponível
+      display: flex;
+      justify-content: flex-start; // Alinha à esquerda
+
+    }
+
+    .theme-toggle {
+      order: 2;
+      display: flex;
+      justify-content: flex-end; // Alinha à direita
+    }
+
+    // Parte inferior: Escolha de Página (centralizado)
+    .page-selector {
+      order: 3;
+      width: 100%; // Ocupa a largura toda
+      display: flex;
+      justify-content: center; // Centraliza os links
+      gap: 10px;
+      margin-top: 8px; // Espaçamento da parte superior
     }
   }
 }
 
-@media screen and (max-width: 850px){
+@media screen and (max-width: 460px) {
   .app-header {
     .mat-toolbar {
-      padding: 0 64px;
-    }
-
-    .btn-header {
-      display: none;
+      .logo-header {
+        transform: scale(0.85);
+        img {
+          height: 50px;
+        }
+      }
+      .page-selector {
+        font-size: 17px;
+        transform: scale(0.85);
+      }
+      .theme-toggle {
+        transform: scale(0.85);
+      }
     }
   }
 }
+
+
+
 
 

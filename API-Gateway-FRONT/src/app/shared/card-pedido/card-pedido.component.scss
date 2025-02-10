@@ -1,0 +1,58 @@
+@import "../../../styles/variables.scss";
+
+.card-pedido {
+  display: flex;
+  flex-direction: column;
+
+  border: 1.5px solid var(--accent-color);
+  border-radius: 20px;
+  padding: 16px;
+  background-color: var(--primary-color);
+  color: var(--font-color);
+  width: 230px;
+  height: 100px;
+
+  .top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h3 {
+        margin: 0;
+        font-family: $fonte-princpial;
+      }
+    }
+    .btn-div {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      button{
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: var(--font-color);
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+    p {
+      font-family: $fonte-princpial;
+      font-size: 12px;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .card-pedido {
+    transform: scale(0.9);
+  }
+}

@@ -1,0 +1,23 @@
+<div class="card-pedido" *ngIf="pedido">
+  <div class="top">
+    <div class="info">
+      <h3>ID: {{ pedido.id }}</h3>
+      <h3>UserID: {{ pedido.userId }}</h3>
+      <h3>Preço: {{ pedido.totalPrice }}</h3>
+    </div>
+
+    <div class="btn-div">
+      <button (click)="deletarPedido()" title="DELETAR">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button (click)="openDialog()" title="VER PRODUTOS">
+        <mat-icon>shopping_bag</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <p>{{ pedido.createdAt }}</p>
+  </div>
+
+</div>

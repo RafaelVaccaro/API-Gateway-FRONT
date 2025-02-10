@@ -1,1 +1,68 @@
-<p>pedido works!</p>
+<section class="pedido-section">
+  <div class="behindForm">
+    <div class="form-div">
+      <form class="pedido-form" (ngSubmit)="registrarPedido()">
+        <div class="user-id">
+          <h3>ID Usuário: </h3>
+          <select [(ngModel)]="selectedUserId" name="userId">
+            <option *ngFor="let user of idsUsuarios" [value]="user.id">{{ user.id }}</option>
+          </select>
+        </div>
+
+        <div class="product-table">
+          <div class="table">
+            <table mat-table [dataSource]="pedido.orderItems" class="mat-table">
+              <ng-container matColumnDef="productId" class="productIdColumn">
+                <th mat-header-cell *matHeaderCellDef> Produto </th>
+                <td mat-cell *matCellDef="let element; let i = index">
+                  <select [(ngModel)]="pedido.orderItems[i].productId" name="productId-{{i}}">
+                    <option *ngFor="let product of idsProdutos" [value]="product.id">{{ product.id }}</option>
+                  </select>
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="quantity" class="quantityColumn">
+                <th mat-header-cell *matHeaderCellDef> Quantidade </th>
+                <td mat-cell *matCellDef="let element; let i = index">
+                  <input type="number" [(ngModel)]="pedido.orderItems[i].quantity" name="quantity-{{i}}" min="1" />
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="actions" class="actionsColumn">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element; let i = index">
+                  <button mat-icon-button (click)="deletarItem(i)" class="deletarBtn">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+
+          <div class="addBtnDiv">
+            <button mat-raised-button type="button" (click)="adicionarItem()" class="AddBtn">
+              Adicionar produto
+            </button>
+          </div>
+
+          <div class="registrarBtn">
+            <button type="submit">Registrar Pedido</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="cards-pedidos">
+    <app-card-pedido
+      *ngFor="let pedido of pedidos || []"
+      [pedido]="pedido"
+      (pedidoDeletado)="deletarPedido($event)">
+    </app-card-pedido>
+  </div>
+
+</section>
+

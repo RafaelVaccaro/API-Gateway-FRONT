@@ -3,12 +3,12 @@
     <form class="produto-form" (ngSubmit)="registrarProduto()">
       <div class="inputs">
         <div class="nome-descricao">
-          <input class="top" type="text" name="name" placeholder="Nome" [(ngModel)]="produto.name" required>
-          <input class="top" type="number" name="price" placeholder="Preço" [(ngModel)]="produto.price" required>
-          <input class="top" type="number" name="stock" placeholder="Quantidade" [(ngModel)]="produto.stock" required>
+          <input class="nome" type="text" name="name" placeholder="Nome" [(ngModel)]="produto.name" required>
+          <input class="preco" type="number" name="price" placeholder="Preço" [(ngModel)]="produto.price" required>
+          <input class="quantidade" type="number" name="stock" placeholder="Quantidade" [(ngModel)]="produto.stock" required>
         </div>
         <div class="preco-quantidade">
-          <textarea class="bottom" name="description" placeholder="Descrição" required></textarea>
+          <input class="bottom" type="text" name="description" placeholder="Descrição" [(ngModel)]="produto.description" required>
         </div>
       </div>
       <button type="submit">Registrar Produto</button>

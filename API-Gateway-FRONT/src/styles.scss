@@ -22,6 +22,12 @@ body.dark-theme {
   --button-color: #0092ff;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--secondary-color);
+}
+
+
 

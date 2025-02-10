@@ -1,54 +1,56 @@
 @import "../../../styles/variables.scss";
 
 .usuario-section {
-  height: 100%;
+  min-height: 100vh;
   background-color: var(--secondary-color);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 60px;
-
-  .form-div {
-    margin: 20px;
-    background-color: var(--primary-color);
-    width: 400px;
-    border-radius: 20px;
-    border: 1.5px solid var(--accent-color);
-
-    .usuario-form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 25px;
-      gap: 10px;
-
-      input {
-        border-radius: 20px;
-        background-color: var(--secondary-color);
-        border: 1.5px solid var(--accent-color);
-        color: var(--font-color);
-        height: 20px;
-        font-size: 17px;
-        font-family: $fonte-princpial;
-        padding: 7px 9px;
-        outline: none;
-      }
-
-      input::placeholder {
-        color: var(--font-color);
-      }
-
-      button {
-        margin-top: 10px;
-        border-radius: 20px;
-        font-size: 15px;
-        font-family: $fonte-princpial;
-        padding: 3px 10px;
-        outline: none;
-        border: 1.5px solid var(--accent-color);
-        background-color: var(--button-color);
-        color: var(--primary-color);
-        cursor: pointer;
+  padding-bottom: 20px;
+  .behindForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .form-div {
+      margin: 20px;
+      background-color: var(--primary-color);
+      width: 400px;
+      border-radius: 20px;
+      border: 1.5px solid var(--accent-color);
+      .usuario-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 25px;
+        gap: 10px;
+        input {
+          border-radius: 20px;
+          background-color: var(--secondary-color);
+          border: 1.5px solid var(--accent-color);
+          color: var(--font-color);
+          height: 20px;
+          font-size: 17px;
+          font-family: $fonte-princpial;
+          padding: 7px 9px;
+          outline: none;
+        }
+        input::placeholder {
+          color: var(--font-color);
+        }
+        button {
+          margin-top: 10px;
+          border-radius: 20px;
+          font-size: 15px;
+          font-family: $fonte-princpial;
+          padding: 3px 10px;
+          outline: none;
+          border: 1.5px solid var(--accent-color);
+          background-color: var(--button-color);
+          color: var(--primary-color);
+          cursor: pointer;
+        }
       }
     }
   }
@@ -61,6 +63,20 @@
     justify-content: center;
     gap: 10px;
   }
+}
+
+@media screen and (max-width: 460px) {
+  .usuario-section {
+    .behindForm {
+      height: 200px;
+      .form-div {
+        transform: scale(0.8);
+      }
+    }
 
 
+    .cards-usuarios{
+      transform: scale(0.8);
+    }
+  }
 }

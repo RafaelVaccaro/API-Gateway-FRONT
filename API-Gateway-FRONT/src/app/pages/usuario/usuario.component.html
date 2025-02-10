@@ -1,10 +1,12 @@
 <section class="usuario-section">
-  <div class="form-div">
-    <form class="usuario-form" (ngSubmit)="registrarUsuario()">
-      <input type="text" name="name" placeholder="Nome" [(ngModel)]="usuario.nome" required>
-      <input type="email" name="email" placeholder="Email" [(ngModel)]="usuario.email" required>
-      <button type="submit">Registrar Usuário</button>
-    </form>
+  <div class="behindForm">
+    <div class="form-div">
+      <form class="usuario-form" (ngSubmit)="registrarUsuario()">
+        <input type="text" name="name" placeholder="Nome" [(ngModel)]="usuario.nome" required>
+        <input type="email" name="email" placeholder="Email" [(ngModel)]="usuario.email" required>
+        <button type="submit">Registrar Usuário</button>
+      </form>
+    </div>
   </div>
 
   <div class="cards-usuarios">

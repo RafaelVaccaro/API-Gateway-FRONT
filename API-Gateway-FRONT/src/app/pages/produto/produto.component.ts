@@ -37,10 +37,36 @@ export class ProdutoComponent implements OnInit {
   }
 
   registrarProduto() {
+    const url = 'http://localhost:8080/product';
+    this.http.post<{ id: number; name: string; description: string; price: number; stock: number }>(url, this.produto).subscribe({
+      next: (response) => {
+        console.log('Produto registrado com sucesso!', response);
+        this.produtos.push(response);
+        this.produto = { name: '', description: '', price: '', stock: '' };
+      },
+      error: (err) => {
+        console.error('Erro ao registrar produto:', err);
+        alert('Erro ao registrar produto.');
+      }
+    });
 
   }
 
-  deletarProduto($event: number) {
+  deletarProduto(id: number): void {
+    const url = `http://localhost:8080/product/${id}`; // Substitua pela URL do seu backend
+    this.http.delete(url).subscribe({
+      next: () => {
+        console.log('Produto deletado com sucesso!');
+        this.produtos = this.produtos.filter((product) => product.id !== id); // Remove o usuário da lista
+      },
+      error: (err) => {
+        console.error('Erro ao deletar produto:', err);
+        alert('Erro ao deletar produto.');
+      }
+    });
+  }
 
+  clear(): void {
+    this.produtos = [];
   }
 }

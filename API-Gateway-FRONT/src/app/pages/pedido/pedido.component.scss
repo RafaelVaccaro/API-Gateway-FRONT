@@ -1,0 +1,172 @@
+@import "../../../styles/variables.scss";
+
+.pedido-section {
+  min-height: 100vh;
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+
+  .behindForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .form-div {
+      display: inline-block;
+      margin: 20px;
+      background-color: var(--primary-color);
+      border-radius: 20px;
+      border: 1.5px solid var(--accent-color);
+
+      .pedido-form {
+        padding: 10px;
+
+        .user-id {
+          display: flex;
+          gap: 10px;
+
+          select {
+            font-family: $fonte-princpial;
+            background-color: var(--secondary-color);
+            border-radius: 20px;
+            border-color: var(--accent-color);
+            font-size: 17px;
+            width: 40px;
+            color: var(--font-color);
+            padding-left: 6px;
+            option {
+              color: var(--font-color);
+            }
+          }
+
+          h3 {
+            font-size: 17px;
+            margin: 0;
+            font-family: $fonte-princpial;
+            color: var(--font-color);
+          }
+        }
+
+        .product-table {
+          margin: 10px;
+          padding: 10px;
+          background-color: var(--secondary-color);
+          border-radius: 20px;
+          border: 1.5px solid var(--accent-color);
+
+          .mat-table {
+            background-color: transparent;
+            width: 100%;
+            border-collapse: collapse;
+            th, td {
+              text-align: center;
+              padding: 8px 12px;
+              vertical-align: middle;
+            }
+
+            select{
+              font-family: $fonte-princpial;
+              background-color: var(--primary-color);
+              border-radius: 20px;
+              border-color: var(--accent-color);
+              font-size: 17px;
+              color: var(--font-color);
+              padding-left: 6px;
+              outline: none;
+              width: 40px;
+              height: 30px;
+            }
+
+            input {
+              font-family: $fonte-princpial;
+
+              background-color: var(--primary-color);
+              border-radius: 20px;
+              border: 1px solid var(--accent-color);
+              font-size: 15px;
+              color: var(--font-color);
+              padding-left: 10px;
+              width: 60px;
+              height: 30px;
+            }
+
+            th {
+              color: var(--font-color);
+              font-family: $fonte-princpial;
+              font-size: 15px;
+              width: 105px;
+            }
+          }
+
+          .deletarBtn {
+            color: var(--font-color);
+            background: none;
+          }
+
+          button {
+            color: var(--font-color);
+            background-color: var(--primary-color);
+          }
+
+          .addBtnDiv {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            button {
+              font-family: $fonte-princpial;
+              font-size: 12px;
+            }
+          }
+
+          .registrarBtn {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            button {
+              margin-top: 20px;
+              border-radius: 20px;
+              font-size: 15px;
+              font-family: $fonte-princpial;
+              padding: 3px 10px;
+              outline: none;
+              border: 1.5px solid var(--secondary-color);
+              background-color: var(--button-color);
+              color: var(--primary-color);
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+  .cards-pedidos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .pedido-section {
+    padding: 0;
+    .behindForm {
+      height: 320px;
+      .form-div {
+        transform: scale(0.8);
+      }
+    }
+  }
+}

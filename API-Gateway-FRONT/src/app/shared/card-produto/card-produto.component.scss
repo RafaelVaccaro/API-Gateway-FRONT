@@ -1,3 +1,5 @@
+@import "../../../styles/variables.scss";
+
 .card-produto {
   display: flex;
   justify-content: space-between;
@@ -6,6 +8,34 @@
   padding: 16px;
   background-color: var(--primary-color);
   color: var(--font-color);
-  width: 380px;
-  height: 150px;
+  width: 270px;
+  height: 120px;
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h3 {
+      font-family: $fonte-princpial;
+      margin: 0;
+    }
+  }
+
+  .botao-delete {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: var(--font-color);
+    }
+  }
+}
+
+@media screen and (max-width: 580px){
+  .card-produto {
+    transform: scale(0.8);
+  }
 }
